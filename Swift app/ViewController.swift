@@ -8,12 +8,29 @@
 
 import UIKit
 
+var tapcount = 0
+
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var tapcount_label: UILabel!
+    @IBOutlet weak var theLabel: UILabel!
+    @IBAction func theButton(_ sender: Any) {
+        self.theLabel.text = "WOW"
+        print("Button Tapped")
+        print (tapcount)
+        
+        tapcount = tapcount + 1
+        
+        if tapcount >= 10 {
+            theLabel.text = "you pressed the button 10 or more times!!"
+        
     }
+    
+ self.view.backgroundColor = UIColor .red
+  
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -22,4 +39,3 @@ class ViewController: UIViewController {
 
 
 }
-
